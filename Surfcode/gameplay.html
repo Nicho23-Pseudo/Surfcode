@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Map</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="gameplay.css">
+</head>
+<body class="bg-gray-100 flex flex-col items-center p-6">
+
+    <header class="w-full max-w-6xl mx-auto bg-white shadow-md p-4 mb-6 flex flex-col items-center"">
+        <h1 id="gameTitle" class="text-xl font-bold mb-4">✈️ Ucup Menjelajah Nusantara</h1>
+        <div class="w-full max-w-4xl flex justify-between items-center mt-2">
+            <p class="text-gray-700" id="greeting"></p> <!-- This is where the name will be displayed -->
+            <p class="text-gray-700" id="date-time"></p>
+            <p class="text-gray-700">💰 <span id="moneyDisplay">50000</span></p>
+        </div>
+
+        <div class="flex justify-center gap-6 mt-6">
+            <div class="bg-gray-300 p-2 rounded text-sm w-24 text-center">
+                <img id="meal-icon" src="Image/makan.png" alt="Meal" class="status-icon">
+                <div id="meal-bar" class="h-2 mt-1 rounded" style="width: 50%; background-color: orange;"></div>
+            </div>
+            <div class="bg-gray-300 p-2 rounded text-sm w-24 text-center">
+                <img id="sleep-icon" src="Image/tidur.png" alt="Sleep" class="status-icon">
+                <div id="sleep-bar" class="h-2 mt-1 rounded" style="width: 50%; background-color: orange;"></div>
+            </div>
+            <div class="bg-gray-300 p-2 rounded text-sm w-24 text-center">
+                <img id="hygiene-icon" src="Image/higienis.png" alt="Hygiene" class="status-icon">
+                <div id="hygiene-bar" class="h-2 mt-1 rounded" style="width: 50%; background-color: orange;"></div>
+            </div>
+            <div class="bg-gray-300 p-2 rounded text-sm w-24 text-center">
+                <img id="happiness-icon" src="Image/senang.png" alt="Happiness" class="status-icon">
+                <div id="happiness-bar" class="h-2 mt-1 rounded" style="width: 50%; background-color: orange;"></div>
+            </div>
+            <div class="bg-gray-300 p-2 rounded text-sm w-24 text-center">
+                <img id="energy-icon" src="Image/energy.png" alt="Energy" class="status-icon">
+                <div id="energy-bar" class="h-2 mt-1 rounded" style="width: 50%; background-color: orange;"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="w-full max-w-6xl flex gap-6">
+
+        <section class="flex-1 bg-blue-100 p-6 rounded-lg shadow-md">
+            <h2 class="text-center font-bold text-lg mb-4">🌍 Map</h2>
+            <div class="grid grid-cols-3 gap-10 place-items-center">
+                <div id="location-home" class="bg-white w-32 h-32 rounded-full flex flex-col justify-center items-center shadow-md cursor-pointer border-4 border-blue-500">
+                    <img src="image/home.png" alt="Home" class="w-12 h-12">
+                    <p class="font-semibold text-sm mt-2">Home</p>
+                </div>
+                <div id="location-campus" class="bg-white w-32 h-32 rounded-full flex flex-col justify-center items-center shadow-md cursor-pointer">
+                    <img src="image/campus.png" alt="Campus" class="w-12 h-12">
+                    <p class="font-semibold text-sm mt-2">Campus</p>
+                </div>
+                <div id="location-mall" class="bg-white w-32 h-32 rounded-full flex flex-col justify-center items-center shadow-md cursor-pointer">
+                    <img src="image/mall.png" alt="Mall" class="w-12 h-12">
+                    <p class="font-semibold text-sm mt-2">Mall</p>
+                </div>
+                <div id="location-cafe" class="bg-white w-32 h-32 rounded-full flex flex-col justify-center items-center shadow-md cursor-pointer">
+                    <img src="image/cafe.png" alt="Cafe" class="w-12 h-12">
+                    <p class="font-semibold text-sm mt-2">Cafe</p>
+                </div>
+                <div id="location-mountain" class="bg-white w-32 h-32 rounded-full flex flex-col justify-center items-center shadow-md cursor-pointer">
+                    <img src="image/mountain.png" alt="Mountain" class="w-12 h-12">
+                    <p class="font-semibold text-sm mt-2">Mountain</p>
+                </div>
+            </div>
+        </section>
+
+        <aside class="w-1/3 bg-white p-6 rounded-lg shadow-md">
+            <h2 id="location-title" class="text-lg font-bold mb-3 text-center">🏠 You're at Home</h2>
+
+            <div id="home-actions" class="flex flex-col gap-4">
+              <button id="mealBtn" class="action-button">🍽️ Get some meal</button>
+              <button id="bathBtn" class="action-button">🛀 Take a bath</button>
+              <button id="sleepBtn" class="action-button">🛌 Sleep</button>
+              <button id="choresBtn" class="action-button tooltip-container"> 👕 Do chores ❕
+                <span class="tooltip-text">You will get 500 gold for helping the house clean</span>
+            </button>
+          </div>
+          
+
+            <div id="campus-actions" style="display: none;" class="flex flex-col gap-4">
+                <button class="action-button">🏫 Attending Class</button>
+                <button class="action-button tooltip-container">🍽️ Get Some Meal ❕
+                    <span class="tooltip-text">You will spend 1000 gold for buying food</span>
+                </button>
+                <button class="action-button">📱 Hang Out</button>
+            </div>
+
+            <div id="mall-actions" style="display: none;" class="flex flex-col gap-4 mt-4">
+                <button class="action-button tooltip-container" id="buyClothesBtn">🛍️ Buy Clothes ❕
+                    <span class="tooltip-text">You will spend 5000 gold for buying clothes</span>
+                </button>
+                <button class="action-button tooltip-container" id="watchCinemaBtn">🎬 Watch Cinema ❕
+                    <span class="tooltip-text">You will spend 2000 gold for watching cinema</span>
+                </button>
+                <button class="action-button tooltip-container" id="eatMallFoodBtn">🍔 Eat Mall Food ❕
+                    <span class="tooltip-text">You will spend 1000 gold for eating</span>
+                </button>
+                <button class="action-button tooltip-container" id="playArcadeBtn">🕹️ Play at Arcade ❕
+                    <span class="tooltip-text">You will spend 2000 gold for playing</span>
+                </button>
+            </div>
+
+            <div id="cafe-actions" style="display: none;" class="flex flex-col gap-4 mt-4">
+                <button class="action-button tooltip-container" id="BuyCoffeeBtn">☕ Buy Coffee ❕
+                    <span class="tooltip-text">You will spend 500 gold for buying coffee</span>
+                </button>
+                <button class="action-button" id="AssingmentBtn"> 💻 Doing Assingment</button>
+                <button class="action-button" id="ReadingBtn">📙 Read a Book</button>
+                <button class="action-button tooltip-container" id="WorkBtn"> 💵 Work Part Time ❕
+                    <span class="tooltip-text">You will get 2000 gold for working</span>
+                </button>
+            </div>
+
+            <div id="mountain-actions" class="flex flex-col gap-4 mt-4" style="display: none;">
+                <button class="action-button">🏕️ Camp</button>
+                <button class="action-button">🍽️ Eat a Meal</button>
+                <button class="action-button">🔥 Light a Campfire</button>
+            </div>
+
+            <div class="flex justify-center gap-6 mt-8">
+              <button id="arrow-left" class="nav-btn">
+                  ◀️
+              </button>
+              <button id="arrow-right" class="nav-btn">
+                  ▶️
+              </button>
+          </div>
+          
+          
+        </aside>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

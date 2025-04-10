@@ -1,0 +1,238 @@
+body {
+    background: linear-gradient(-45deg, #e0f7fa, #e1bee7, #f3e5f5, #ffecb3);
+    background-size: 400% 400%;
+    animation: gradientFlow 15s ease infinite;
+}
+
+@keyframes gradientFlow {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* General container for centering content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header styling */
+.header {
+    background-color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 30px; /* Added margin for spacing */
+}
+
+/* Status Bar Section */
+.status-bar-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.status-bar {
+    text-align: center;
+    width: 15%;  /* Adjusted the width of each status bar */
+}
+
+.status-bar div {
+    width: 100%;
+    height: 10px;
+    margin-top: 5px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    transition: width 0.4s ease, background-color 0.3s ease;
+}
+
+.status-bar progress {
+    width: 100%;
+    height: 100%;
+}
+
+/* Map Section */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 40px; /* Added bottom margin for spacing */
+}
+
+.location-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.5s ease;
+    opacity: 0.9;
+}
+
+.location-card:hover {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+.location-icon {
+    width: 50px;
+    height: 50px;
+}
+
+.glow {
+    box-shadow: 0 0 20px 5px rgba(106, 27, 154, 0.5);
+    transition: box-shadow 0.6s ease-out;
+}
+
+/* Container for the action buttons */
+.actions {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Action Buttons */
+.action-button {
+    width: 80%; /* Adjusted width to be more proportionate */
+    padding: 12px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    text-align: center;
+    font-weight: bold;
+    border: 2px solid #ddd;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block; /* Ensures that the button is block-level, helping with centering */
+    margin-left: auto;  /* Centers the button horizontally */
+    margin-right: auto; /* Centers the button horizontally */
+}
+
+.action-button:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.actions-button-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Improve spacing between status bar and map */
+.status-bar-container, .grid {
+    margin-bottom: 40px; /* Added spacing between sections */
+}
+
+.location-card p {
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+/* Styling for the navigation buttons */
+.nav-btn {
+    background-color: #f4f4f4;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    padding: 15px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 24px; /* Adjust the size of the emoji */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-btn:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.1);
+}
+
+.nav-btn + .nav-btn {
+    margin-left: 10px;
+}
+
+
+/* Add a bit of spacing between the buttons */
+.nav-btn + .nav-btn {
+    margin-left: 10px;
+}
+
+/* Tooltip container */
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Tooltip text styling */
+.tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position the tooltip above the button */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    font-size: 0.9rem;
+}
+
+/* Arrow pointing to the button */
+.tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+/* Tooltip visibility on hover */
+.tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Back to player page button */
+#backToPlayerPage {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 24px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#backToPlayerPage:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Congratulations message */
+.text-center h2 {
+    color: #2d3748;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
