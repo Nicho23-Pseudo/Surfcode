@@ -1,6 +1,7 @@
 # Surfcode
 
 Halo kami dari kelompok Surfcode mempersembahkan game kami
+
 Member:
     1. Nicholas Wijaya       (00000108084)
     2. Fauzi Andrian         (00000135944)
