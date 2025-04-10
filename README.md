@@ -2,11 +2,7 @@
 
 Halo kami dari kelompok Surfcode mempersembahkan game kami
 
-Member:
-    1. Nicholas Wijaya       (00000108084)
-    2. Fauzi Andrian         (00000135944)
-    3. Figo Barosky          (00000108111)
-    4. Jonathan Andilinata   (00000108980)
+Member: Nicholas Wijaya (00000108084), Fauzi Andrian (00000135944), Figo Barosky (00000108111), Jonathan Andilinata (00000108980)
 
 Game Rule:
 1. di page pertama itu adalah pemilihan Player, pada saat ini pilihlah player mu dan nama mu)
